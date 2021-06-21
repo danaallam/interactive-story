@@ -8,7 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Townsville Killer</title>
     <script>
+      let t=true;
       function show(shown, hidden) {
+        if(t==true){
+          t=false;
+          document.querySelector("body").style.overflow="initial";
+        }
+        if(shown=="start"){
+          document.querySelector("body").style.overflow="hidden";
+        }
         document.getElementById(shown).style.display = "block";
         document.getElementById(hidden).style.display = "none";
         return false;
@@ -31,43 +39,43 @@
   </head>
   <body>
     <div>
-      <audio controls autoplay loop style="display: none">
+      <audio controls autoplay loop hidden>
         <source src="./audio/horrorSong.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="breathing" controls style="display: none">
+      <audio id="breathing" controls hidden>
         <source src="./audio/breathing (mp3cut.net).mp3.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="walking" controls style="display: none">
-        <source src="./audio/walking (mp3cut.net).mp3.mp3" type="audio/mpeg" />
+      <audio id="walking" controls hidden>
+        <source src="./audio/walking.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="stair" controls style="display: none">
+      <audio id="stair" controls hidden>
         <source src="./audio/stair.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="door" controls style="display: none">
+      <audio id="door" controls hidden>
         <source src="./audio/bbc_door-creak_07037552 (mp3cut.net).mp3" type="audio/mpeg" />
       </audio>
-      <audio id="screaming" controls style="display: none">
+      <audio id="screaming" controls hidden>
         <source src="./audio/screaming.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="searching" controls style="display: none">
+      <audio id="searching" controls hidden>
         <source src="./audio/searching.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="mario" controls style="display: none">
+      <audio id="mario" controls hidden>
         <source src="./audio/super-mario-death-sound-sound-effect (mp3cut.net).mp3" type="audio/mpeg" />
       </audio>
-      <audio id="car" controls style="display: none">
+      <audio id="car" controls hidden>
         <source src="./audio/carPassing.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="wood" controls style="display: none">
+      <audio id="wood" controls hidden>
         <source src="./audio/wood (mp3cut.net).mp3" type="audio/mpeg" />
       </audio>
-      <audio id="car-acc" controls style="display: none">
+      <audio id="car-acc" controls hidden>
         <source src="./audio/car-acc (mp3cut.net).mp3" type="audio/mpeg" />
       </audio>
-      <audio id="bad-finish" controls style="display: none">
+      <audio id="bad-finish" controls hidden>
         <source src="./audio/bad-f.mp3" type="audio/mpeg" />
       </audio>
-      <audio id="celebrating" controls style="display: none">
+      <audio id="celebrating" controls hidden>
         <source src="./audio/celebrating (mp3cut.net).mp3" type="audio/mpeg" />
       </audio>
     </div>
@@ -95,26 +103,27 @@
     <div id="Chapter1" style="display: none">
       <div class="main" id="first">
       <p>It's finally the 31st of October. You've dressed as the "Townsville Killer"
-      and are ready to go out to a friend's house party.</p>
-      <p>When you came back home, you found your mom and dad killed and the numbers 11 and 12 were written in their blood on the the wall.
-      This means there's still one soul to go which might be YOU.</p>
+      and ready to party at your friend's house.</p>
+      <p>When the party was over, you came back home to find your parents were dead and 2 numbers (11 and 12) were written with their blood on the wall.
+      This means you have to watch out. You might be the next!</p><p>What shall you do?</p>
       </div>
+      <img  class="rigth" src="./images/blood13.png" alt="png">
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter4','Chapter1'),play('stair')">Go downstairs</button>    
-        <button class="btn" onclick="return show('Chapter2','Chapter1');">remain upstairs</button>    
+        <button class="btn" onclick="return show('Chapter2','Chapter1');">Remain upstairs</button>    
       </div>
     </div>
 
     <div id="Chapter2" style="display: none">
       <div class="main">
       <p>Terrified the Townsville killer has returned after all these years, you
-      remain up stairs looking for a weapon but all you find is your dad's old
+      remain upstairs looking for a weapon but all you find is your dad's old
       razor.</p>
       </div>
-      <img class="middle" src="./images/warning.gif" alt="gif" width="300px" height="auto"><br>
+      <img class="middle" src="./images/warning.gif" alt="gif" width="500px" height="auto"><br>
       <div class="buttons">
-        <button class="btn" onclick="return show('Chapter3','Chapter2'),play('walking'),playafter(6000,'screaming')">go to your bedroom</button>    
-        <button class="btn" onclick="return show('Chapter4','Chapter2'),play('stair')">go downstairs</button>    
+        <button class="btn" onclick="return show('Chapter3','Chapter2'),play('walking'),playafter(5000,'screaming')">Go to your bedroom</button>    
+        <button class="btn" onclick="return show('Chapter4','Chapter2'),play('stair')">Go downstairs</button>    
       </div>
     </div>
 
@@ -123,9 +132,9 @@
       <p>You rush to get the tennis racket you remember you have kept in your
       closet. However, your room is farthest from the staircase and this results
       in you not being able to hear the intruder's footsteps climbing up which
-      leads to your death.</p>
+      leads to your death.</p><p><span class="death">GAME OVER...</span></p>
       </div>
-      <img class="middle" src="./images/monophy.gif" alt="gif" width="25%" height="auto"><br>
+      <img class="middle" src="./images/monophy.gif" alt="gif" width="25%"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter2','Chapter3');">Back One Step</button>
         <button class="btn" onclick="return show('start','Chapter3');">REPLAY</button>
@@ -134,19 +143,22 @@
     
     <div id="Chapter4" style="display: none">
       <div class="main">
-      <p>you see the front door thinking the Townsville killer is in your house to
-      claim you as his 13th victim.</p>
+      <p>You see the front door thinking the Townsville killer is in your house to
+      claim you as his 13th victim.</p><p>Do you have the courage to open the door? Or do you prefer to keep it closed?</p>
       </div>
+      <img  class="middle" src="./images/frontdoor.jpg" alt="jpg"><br>
       <div class="buttons">
-        <button class="btn" onclick="return show('Chapter6','Chapter4');">keep the door closed</button>
+        <button class="btn" onclick="return show('Chapter6','Chapter4');">Keep the door closed</button>
         <button class="btn" onclick="return showafter(5000,'screaming','Chapter5','Chapter4'),play('door')">Open the door</button>    
       </div>
     </div>
 
     <div id="Chapter5" style="display: none">
       <div class="main">
-      <p>you got killed by the Townsville killer.</p>
+      <p>The Townsville killer got you.</p>
+      <p><span class="death">GAME OVER...</span></p>
       </div>
+      <img  class="middle" src="./images/killeddoor.jpg" alt="jpg" width="45%"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter4','Chapter5');">Back One Step</button>
         <button class="btn" onclick="return show('start','Chapter5');">REPLAY</button>
@@ -155,9 +167,10 @@
 
     <div id="Chapter6" style="display: none">
       <div class="main">
-      <p>you get to your home phone in the living room. Just as you begin dialing
-      the police, you discover the line has been cut.</p>
+      <p>You pick up the home phone in your living room and just as you begin dialing
+      the police, you discover that the line is cut.</p><p>Hurry up! Choose a plan B.</p>
       </div>
+      <img  class="middle" src="./images/call.gif" alt="jpg"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter9','Chapter6'),play('walking')">Go to the kitchen</button>    
         <button class="btn" onclick="return show('Chapter7','Chapter6'),play('searching')">Search for your mobile phone</button>    
@@ -169,6 +182,7 @@
       <p>You stay in the living room searching for your phone only to know it
       currently has a dead battery.</p>
       </div>
+      <img  class="middle" src="./images/battery.gif" alt="jpg"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter8','Chapter7'),play('searching'), play('screaming')">Search for a charger</button>    
         <!-- <button class="btn"  onclick="return showafter(3000,'screaming','Chapter8','Chapter7'),play('searching')">Search for a charger</button>     -->
@@ -179,8 +193,9 @@
     <div id="Chapter8" style="display: none">
       <div class="main">
       <p>You search for a charger when suddenly the power is cut off and someone
-      enters and kills you</p>
+      enters and kills you.</p><p><span class="death">GAME OVER...</span></p>
       </div>
+      <img class="middle" src="./images/monophy.gif" alt="gif" width="25%"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter7','Chapter8');">Back One Step</button>
         <button class="btn" onclick="return show('start','Chapter8');">REPLAY</button>
@@ -189,9 +204,10 @@
 
     <div id="Chapter9" style="display: none">
       <div class="main">
-      <p>You go to the kitchen and pick the sharpest knife you see, and suddenly
-      the power is cut off.</p>
+      <p>You go to the kitchen and pick the sharpest knife, and suddenly
+      the power is cut off. What will you do now?</p>
       </div>
+      <img class="middle" src="./images/search.gif" alt="gif" width="45%"><br>
       <div class="buttons">
         <button class="btn" onclick="return showafter(5000,'mario','Chapter10','Chapter9'),play('walking')">Go back to the living room</button>    
         <button class="btn" onclick="return showafter(5000,'car','Chapter11','Chapter9'),play('stair')">Go to the basement</button>    
@@ -200,18 +216,20 @@
 
     <div id="Chapter10" style="display: none">
       <div class="main">
-      <p>You got back to the living room and get killed</p>
+      <p>You go back to the living room, but someone stops you. You turn around to see the "Townsville Killer" and poof! He kills you.</p>
       </div> 
+      <img class="middle" src="./images/livingroom.gif" alt="gif" width="28%"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter9','Chapter10');">Back One Step</button>
-        <button class="btn" onclick="return show('start','Chapter5');">REPLAY</button>
+        <button class="btn" onclick="return show('start','Chapter10');">REPLAY</button>
       </div>
     </div>
     
     <div id="Chapter11" style="display: none">
       <div class="main">
-      <p>You go to the basement and escape then you see a car passing by.</p>
+      <p>You go to the basement. You see a light and you follow it.<br>You find an unlocked door so you open it and go out then here you see a car passing by...<br>What will you do?</p>
       </div>
+      <img class="middle" src="./images/streetcar.jpg" alt="gif" width="45%"><br>
       <div class="buttons">
         <button class="btn" onclick="return showafter(2000,'wood','Chapter13','Chapter11')">Seek your way in the woods</button>    
         <button class="btn" onclick="return showafter(3000,'screaming','Chapter12','Chapter11'),play('car-acc')">Stop the car</button>    
@@ -220,8 +238,9 @@
     
     <div id="Chapter12" style="display: none">
       <div class="main">
-      <p>You stop the car and you got killed. It's the Townsville Killer driving.</p>
+      <p>You stop the car and you got killed. It's the Townsville Killer driving. <span class="death">MWAHAHA</span></p>
       </div>
+      <img class="middle" src="./images/stopcar.jpeg" alt="gif" width="55%"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter11','Chapter12');">Back One Step</button>
         <button class="btn" onclick="return show('start','Chapter12');">REPLAY</button>
@@ -230,8 +249,9 @@
     
     <div id="Chapter13" style="display: none">
       <div class="main">
-      <p>You hide and seek your way in the woods.</p>
+      <p>Smart choice!<br>Now you hide and seek your way in the woods.<br>As you are walking, you see a light far away from you...<br>What will you do now?</p>
       </div>
+      <img class="middle" src="./images/wood.gif" alt="gif" width="60%"><br>
       <div class="buttons">
         <button class="btn" onclick="return show('Chapter14','Chapter13'),play('bad-finish')">Go to the light</button>    
         <button class="btn" onclick="return show('Chapter15','Chapter13'),play('celebrating')">Run away from it</button>    
@@ -239,18 +259,19 @@
     </div>
     
     <div id="Chapter14" style="display: none">
-      <div class="main"><p>It's just a dream :p</p></div>
-      <img class="middle" src="./images/dream.gif" alt="gif" width="45%" height="auto"><br>
+      <div class="main"><p>You wake up! It's just a dream hehe:p</p></div>
+      <img class="middle" src="./images/dream.gif" alt="gif" width="45%"><br>
       <div class="buttons">   
         <button class="btn" onclick="return show('Chapter13','Chapter14');">Back One Step</button>
-        <button class="btn" onclick="return show('start','Chapter12');">REPLAY</button>
+        <button class="btn" onclick="return show('start','Chapter14');">REPLAY</button>
       </div>
     </div>
     
     <div id="Chapter15" style="display: none">
       <div class="main">
-      <p>You run away, find another car and reach the police station. You survived, Congrats!!</p>
+      <p>YAY!!<br>You run away, find another car and reach the police station. You're alive, Congrats!!</p>
       </div>
+      <img class="middle" src="./images/happy.gif" alt="gif" width="45%"><br>
       <button class="btn" onclick="return show('start','Chapter15');">REPLAY</button>
     </div>
   </body>

@@ -5,8 +5,17 @@
 }
 
 body {
+  overflow: hidden;
   background-color: #212121;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#start {
+  background-image: url("./images/story.png");
+  margin-top: -10px;
+  height: 700px;
+  width: 100%;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -24,7 +33,7 @@ h1 {
 }
 
 .title {
-  color: rgb(150, 14, 5);
+  color: rgb(90, 12, 7);
   opacity: 0.5;
   font-size: 0.7em;
 }
@@ -32,7 +41,7 @@ h1 {
 .death {
   font-family: "Creepster", sans-serif;
   font-size: 50px;
-  color: rgb(150, 14, 5);
+  color: rgb(90, 12, 7);
 }
 
 @-webkit-keyframes horror-animation {
@@ -68,13 +77,13 @@ h1 {
   float: right;
   margin-right: 10px;
   cursor: pointer;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   font-size: large;
-  color: rgb(150, 14, 5);
+  color: rgb(90, 12, 7);
   font-weight: bold;
   padding: 15px 50px;
   border-radius: 6px;
-  border: 3px solid rgb(150, 14, 5);
+  border: 3px solid rgb(90, 12, 7);
   transition: all 0.3s;
 }
 
@@ -85,7 +94,7 @@ h1 {
 }
 
 .btn:hover {
-  background: rgb(150, 14, 5);
+  background: rgb(90, 12, 7);
   color: black;
 }
 
@@ -98,12 +107,17 @@ h1 {
   font-size: 27px;
 }
 
-#first {
-  width: 50%;
+#Chapter3 {
+  margin-top: -15px;
 }
 
 .middle {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.rigth{
+  width: 30%;
+  float: right;
 }
